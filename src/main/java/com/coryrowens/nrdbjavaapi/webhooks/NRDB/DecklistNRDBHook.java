@@ -6,10 +6,31 @@ import com.coryrowens.nrdbjavaapi.webhooks.DecklistWebHook;
 import com.coryrowens.nrdbjavaapi.webhooks.NRDB.JSON.EasyNRDBJsonParser;
 import java.util.Date;
 import java.util.List;
+import org.apache.http.HttpHost;
+import org.apache.http.client.HttpClient;
 import org.apache.sling.commons.json.JSONArray;
 
 public class DecklistNRDBHook extends AbstractNRDBHook implements DecklistWebHook{
 
+	
+	/* <editor-fold desc="Constructors"> */
+	public DecklistNRDBHook() {
+		super();
+	}
+	
+	public DecklistNRDBHook(String target){
+		super(target);
+	}
+	
+	public DecklistNRDBHook(HttpClient client, String target) {
+		super(client, target);
+	}
+	
+	public DecklistNRDBHook(HttpClient client, HttpHost host) {
+		super(client, host);
+	}
+	/* </editor-fold> */
+	
 	@Override
 	public DecklistRaw decklist(int id) {
 		String method = "GET";

@@ -4,10 +4,30 @@ import com.coryrowens.nrdbjavaapi.schema.raw.TypeRaw;
 import com.coryrowens.nrdbjavaapi.webhooks.NRDB.JSON.EasyNRDBJsonParser;
 import com.coryrowens.nrdbjavaapi.webhooks.TypeWebHook;
 import java.util.List;
+import org.apache.http.HttpHost;
+import org.apache.http.client.HttpClient;
 import org.apache.sling.commons.json.JSONArray;
 
 public class TypeNRDBHook extends AbstractNRDBHook implements TypeWebHook {
 
+	/* <editor-fold desc="Constructors"> */
+	public TypeNRDBHook() {
+		super();
+	}
+	
+	public TypeNRDBHook(String target){
+		super(target);
+	}
+	
+	public TypeNRDBHook(HttpClient client, String target) {
+		super(client, target);
+	}
+	
+	public TypeNRDBHook(HttpClient client, HttpHost host) {
+		super(client, host);
+	}
+	/* </editor-fold> */
+	
 	@Override
 	public TypeRaw type(String typeCode) {
 		String method = "GET";

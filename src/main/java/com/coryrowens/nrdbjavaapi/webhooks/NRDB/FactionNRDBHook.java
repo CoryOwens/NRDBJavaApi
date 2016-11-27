@@ -3,11 +3,31 @@ import com.coryrowens.nrdbjavaapi.schema.raw.FactionRaw;
 import com.coryrowens.nrdbjavaapi.webhooks.FactionWebHook;
 import com.coryrowens.nrdbjavaapi.webhooks.NRDB.JSON.EasyNRDBJsonParser;
 import java.util.List;
+import org.apache.http.HttpHost;
+import org.apache.http.client.HttpClient;
 import org.apache.sling.commons.json.JSONArray;
 import org.apache.sling.commons.json.JSONObject;
 
 public class FactionNRDBHook extends AbstractNRDBHook implements FactionWebHook{
 
+	/* <editor-fold desc="Constructors"> */
+	public FactionNRDBHook() {
+		super();
+	}
+	
+	public FactionNRDBHook(String target){
+		super(target);
+	}
+	
+	public FactionNRDBHook(HttpClient client, String target) {
+		super(client, target);
+	}
+	
+	public FactionNRDBHook(HttpClient client, HttpHost host) {
+		super(client, host);
+	}
+	/* </editor-fold> */
+	
 	@Override
 	public FactionRaw faction(String factionCode) {
 		String method = "GET";

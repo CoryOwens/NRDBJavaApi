@@ -4,10 +4,30 @@ import com.coryrowens.nrdbjavaapi.schema.raw.CycleRaw;
 import com.coryrowens.nrdbjavaapi.webhooks.CycleWebHook;
 import com.coryrowens.nrdbjavaapi.webhooks.NRDB.JSON.EasyNRDBJsonParser;
 import java.util.List;
+import org.apache.http.HttpHost;
+import org.apache.http.client.HttpClient;
 import org.apache.sling.commons.json.JSONArray;
 
 public class CycleNRDBHook extends AbstractNRDBHook implements CycleWebHook{
 
+	/* <editor-fold desc="Constructors"> */
+	public CycleNRDBHook() {
+		super();
+	}
+	
+	public CycleNRDBHook(String target){
+		super(target);
+	}
+	
+	public CycleNRDBHook(HttpClient client, String target) {
+		super(client, target);
+	}
+	
+	public CycleNRDBHook(HttpClient client, HttpHost host) {
+		super(client, host);
+	}
+	/* </editor-fold> */
+	
 	@Override
 	public CycleRaw cycle(String cycleCode) {
 		String method = "GET";

@@ -4,10 +4,30 @@ import com.coryrowens.nrdbjavaapi.schema.raw.SideRaw;
 import com.coryrowens.nrdbjavaapi.webhooks.NRDB.JSON.EasyNRDBJsonParser;
 import com.coryrowens.nrdbjavaapi.webhooks.SideWebHook;
 import java.util.List;
+import org.apache.http.HttpHost;
+import org.apache.http.client.HttpClient;
 import org.apache.sling.commons.json.JSONArray;
 
 public class SideNRDBHook extends AbstractNRDBHook implements SideWebHook {
 
+	/* <editor-fold desc="Constructors"> */
+	public SideNRDBHook() {
+		super();
+	}
+	
+	public SideNRDBHook(String target){
+		super(target);
+	}
+	
+	public SideNRDBHook(HttpClient client, String target) {
+		super(client, target);
+	}
+	
+	public SideNRDBHook(HttpClient client, HttpHost host) {
+		super(client, host);
+	}
+	/* </editor-fold> */
+	
 	@Override
 	public SideRaw side(String sideCode) {
 		String method = "GET";

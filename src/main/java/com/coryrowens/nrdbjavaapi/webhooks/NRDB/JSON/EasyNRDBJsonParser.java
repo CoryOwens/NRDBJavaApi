@@ -19,7 +19,7 @@ public class EasyNRDBJsonParser<T> {
 			mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
 			return mapper.readValue(json.toString(), type);
 		} catch (IOException ex) {
-			String message = "Error parsing JSON decklist";
+			String message = "Error parsing JSON.";
 			Logger.getLogger(EasyNRDBJsonParser.class.getName()).log(Level.SEVERE, message, ex);
 			throw new UncheckedJSONException(message, ex);
 		}

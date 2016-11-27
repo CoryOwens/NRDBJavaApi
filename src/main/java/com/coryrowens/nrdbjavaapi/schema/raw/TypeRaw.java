@@ -8,6 +8,18 @@ public class TypeRaw {
 	public Boolean isSubtype;
 	public String name;
 	public Integer position;
+	public String sideCode;
+
+	@Override
+	public int hashCode() {
+		int hash = 7;
+		hash = 17 * hash + Objects.hashCode(this.code);
+		hash = 17 * hash + Objects.hashCode(this.isSubtype);
+		hash = 17 * hash + Objects.hashCode(this.name);
+		hash = 17 * hash + Objects.hashCode(this.position);
+		hash = 17 * hash + Objects.hashCode(this.sideCode);
+		return hash;
+	}
 
 	@Override
 	public boolean equals(Object obj) {
@@ -27,6 +39,9 @@ public class TypeRaw {
 		if (!Objects.equals(this.name, other.name)) {
 			return false;
 		}
+		if (!Objects.equals(this.sideCode, other.sideCode)) {
+			return false;
+		}
 		if (!Objects.equals(this.isSubtype, other.isSubtype)) {
 			return false;
 		}
@@ -36,14 +51,5 @@ public class TypeRaw {
 		return true;
 	}
 
-	@Override
-	public int hashCode() {
-		int hash = 7;
-		hash = 67 * hash + Objects.hashCode(this.code);
-		hash = 67 * hash + Objects.hashCode(this.isSubtype);
-		hash = 67 * hash + Objects.hashCode(this.name);
-		hash = 67 * hash + Objects.hashCode(this.position);
-		return hash;
-	}
 
 }

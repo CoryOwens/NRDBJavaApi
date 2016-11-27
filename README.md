@@ -1,0 +1,3 @@
+# NRDBJavaApi #
+
+This project indends to create a Java library for accessing the NetrunnerDB API (see https://netrunnerdb.com/api/doc). This project uses Maven for its dependencies (which include Apache Commons and Appache HTTP). One error that came up is that Java apparently doesn't like the self-signed SSL certificate used by NetrunnerDB. If you run into it, just Google the error, and you will find a guide that walks you through resolving it. I have included the InstallCert class (placed in the package com.coryrowens.nrdbjavaapi.webhooks.NRDB.util) that the guide suggested.

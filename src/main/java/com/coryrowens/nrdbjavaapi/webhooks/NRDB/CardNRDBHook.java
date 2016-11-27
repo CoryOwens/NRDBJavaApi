@@ -95,8 +95,4 @@ public class CardNRDBHook implements CardWebHook {
 		}
 	}
 
-	public static void main(String[] args) {
-		CardNRDBHook h = new CardNRDBHook();
-		Collection<CardRaw> c = h.cards();
-	}
 }

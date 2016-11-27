@@ -1,4 +1,4 @@
-package com.coryrowens.nrdbjavaapi.webhooks.NRDB.util;
+package com.coryrowens.nrdbjavaapi.webhooks.NRDB.JSON;
 
 public class UncheckedJSONException extends RuntimeException{
 	public UncheckedJSONException(String message, Exception ex){

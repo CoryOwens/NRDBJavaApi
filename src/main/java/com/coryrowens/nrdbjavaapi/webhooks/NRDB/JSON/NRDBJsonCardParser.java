@@ -1,6 +1,11 @@
-package com.coryrowens.nrdbjavaapi.webhooks.NRDB.util;
+package com.coryrowens.nrdbjavaapi.webhooks.NRDB.JSON;
 
 import com.coryrowens.nrdbjavaapi.schema.raw.CardRaw;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.apache.sling.commons.json.JSONArray;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
 
@@ -33,8 +38,25 @@ public class NRDBJsonCardParser {
 			if(jsonCard.has("type_code") && jsonCard.get("type_code") != JSONObject.NULL) ret.typeCode = (String) jsonCard.get("type_code");
 			if(jsonCard.has("uniqueness") && jsonCard.get("uniqueness") != JSONObject.NULL) ret.uniqueness = (boolean) jsonCard.get("uniqueness");
 		}catch (JSONException ex){
-			throw new UncheckedJSONException("Error parsing JSON response.", ex);
+			String message = "Error parsing JSON card.";
+			Logger.getLogger(NRDBJsonCardParser.class.getName()).log(Level.SEVERE, message, ex);
+			throw new UncheckedJSONException(message, ex);
 		}
 		return ret;
+	}
+	
+	public static List<CardRaw> toCards(JSONArray jsonCards){
+		try {
+			List<CardRaw> ret = new ArrayList<>();
+			for (int i = 0; i < jsonCards.length(); i++){
+				JSONObject cardData = (JSONObject) jsonCards.get(i);
+				ret.add(toCard(cardData));
+			}
+			return ret;
+		} catch (JSONException ex) {
+			String message = "Error parsing JSON card.";
+			Logger.getLogger(NRDBJsonCardParser.class.getName()).log(Level.SEVERE, message, ex);
+			throw new UncheckedJSONException(message, ex);
+		}
 	}
 }

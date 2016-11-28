@@ -1,32 +1,32 @@
-package com.coryrowens.nrdbjavaapi.webhooks.NRDB;
+package com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB;
 
 import com.coryrowens.nrdbjavaapi.schema.raw.DecklistRaw;
 import com.coryrowens.nrdbjavaapi.util.Dates;
-import com.coryrowens.nrdbjavaapi.webhooks.DecklistWebHook;
-import com.coryrowens.nrdbjavaapi.webhooks.NRDB.JSON.EasyNRDBJsonParser;
+import com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB.JSON.EasyNRDBJsonParser;
 import java.util.Date;
 import java.util.List;
 import org.apache.http.HttpHost;
 import org.apache.http.client.HttpClient;
 import org.apache.sling.commons.json.JSONArray;
+import com.coryrowens.nrdbjavaapi.webhooks.raw.DecklistRawWebHook;
 
-public class DecklistNRDBHook extends AbstractNRDBHook implements DecklistWebHook{
+public class DecklistRawNRDBHook extends AbstractRawNRDBHook implements DecklistRawWebHook{
 
 	
 	/* <editor-fold desc="Constructors"> */
-	public DecklistNRDBHook() {
+	public DecklistRawNRDBHook() {
 		super();
 	}
 	
-	public DecklistNRDBHook(String target){
+	public DecklistRawNRDBHook(String target){
 		super(target);
 	}
 	
-	public DecklistNRDBHook(HttpClient client, String target) {
+	public DecklistRawNRDBHook(HttpClient client, String target) {
 		super(client, target);
 	}
 	
-	public DecklistNRDBHook(HttpClient client, HttpHost host) {
+	public DecklistRawNRDBHook(HttpClient client, HttpHost host) {
 		super(client, host);
 	}
 	/* </editor-fold> */
@@ -52,7 +52,7 @@ public class DecklistNRDBHook extends AbstractNRDBHook implements DecklistWebHoo
 
 	/* Main method used for manual testing. */
 //	public static void main(String[] args){
-//		DecklistNRDBHook h = new DecklistNRDBHook();
+//		DecklistRawNRDBHook h = new DecklistRawNRDBHook();
 //		DecklistRaw l = h.decklist(1);
 //		List<DecklistRaw> ls = h.decklists(Dates.fromString("2016-11-27"));
 //	}

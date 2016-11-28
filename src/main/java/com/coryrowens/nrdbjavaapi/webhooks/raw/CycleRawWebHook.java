@@ -1,9 +1,9 @@
-package com.coryrowens.nrdbjavaapi.webhooks;
+package com.coryrowens.nrdbjavaapi.webhooks.raw;
 
 import com.coryrowens.nrdbjavaapi.schema.raw.CycleRaw;
 import java.util.List;
 
-public interface CycleWebHook {
+public interface CycleRawWebHook {
 	
 	
 	public CycleRaw cycle(String cycleCode);

@@ -1,29 +1,29 @@
-package com.coryrowens.nrdbjavaapi.webhooks.NRDB;
+package com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB;
 
 import com.coryrowens.nrdbjavaapi.schema.raw.SideRaw;
-import com.coryrowens.nrdbjavaapi.webhooks.NRDB.JSON.EasyNRDBJsonParser;
-import com.coryrowens.nrdbjavaapi.webhooks.SideWebHook;
+import com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB.JSON.EasyNRDBJsonParser;
 import java.util.List;
 import org.apache.http.HttpHost;
 import org.apache.http.client.HttpClient;
 import org.apache.sling.commons.json.JSONArray;
+import com.coryrowens.nrdbjavaapi.webhooks.raw.SideRawWebHook;
 
-public class SideNRDBHook extends AbstractNRDBHook implements SideWebHook {
+public class SideRawNRDBHook extends AbstractRawNRDBHook implements SideRawWebHook {
 
 	/* <editor-fold desc="Constructors"> */
-	public SideNRDBHook() {
+	public SideRawNRDBHook() {
 		super();
 	}
 	
-	public SideNRDBHook(String target){
+	public SideRawNRDBHook(String target){
 		super(target);
 	}
 	
-	public SideNRDBHook(HttpClient client, String target) {
+	public SideRawNRDBHook(HttpClient client, String target) {
 		super(client, target);
 	}
 	
-	public SideNRDBHook(HttpClient client, HttpHost host) {
+	public SideRawNRDBHook(HttpClient client, HttpHost host) {
 		super(client, host);
 	}
 	/* </editor-fold> */
@@ -48,7 +48,7 @@ public class SideNRDBHook extends AbstractNRDBHook implements SideWebHook {
 
 	/* Main method used for manual testing. */
 //	public static void main(String[] args){
-//		SideNRDBHook h = new SideNRDBHook();
+//		SideRawNRDBHook h = new SideRawNRDBHook();
 //		SideRaw s = h.side("runner");
 //		List<SideRaw> ss = h.sides();
 //	}

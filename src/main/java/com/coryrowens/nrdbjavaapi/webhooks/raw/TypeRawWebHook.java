@@ -1,9 +1,9 @@
-package com.coryrowens.nrdbjavaapi.webhooks;
+package com.coryrowens.nrdbjavaapi.webhooks.raw;
 
 import com.coryrowens.nrdbjavaapi.schema.raw.TypeRaw;
 import java.util.List;
 
-public interface TypeWebHook {
+public interface TypeRawWebHook {
 
 	public TypeRaw type(String typeCode);
 

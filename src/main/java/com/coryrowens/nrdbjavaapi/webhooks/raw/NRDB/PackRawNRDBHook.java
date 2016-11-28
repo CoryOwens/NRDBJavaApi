@@ -1,29 +1,29 @@
-package com.coryrowens.nrdbjavaapi.webhooks.NRDB;
+package com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB;
 
 import com.coryrowens.nrdbjavaapi.schema.raw.PackRaw;
-import com.coryrowens.nrdbjavaapi.webhooks.NRDB.JSON.EasyNRDBJsonParser;
-import com.coryrowens.nrdbjavaapi.webhooks.PackWebHook;
+import com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB.JSON.EasyNRDBJsonParser;
 import java.util.List;
 import org.apache.http.HttpHost;
 import org.apache.http.client.HttpClient;
 import org.apache.sling.commons.json.JSONArray;
+import com.coryrowens.nrdbjavaapi.webhooks.raw.PackRawWebHook;
 
-public class PackNRDBHook extends AbstractNRDBHook implements PackWebHook{
+public class PackRawNRDBHook extends AbstractRawNRDBHook implements PackRawWebHook{
 
 	/* <editor-fold desc="Constructors"> */
-	public PackNRDBHook() {
+	public PackRawNRDBHook() {
 		super();
 	}
 	
-	public PackNRDBHook(String target){
+	public PackRawNRDBHook(String target){
 		super(target);
 	}
 	
-	public PackNRDBHook(HttpClient client, String target) {
+	public PackRawNRDBHook(HttpClient client, String target) {
 		super(client, target);
 	}
 	
-	public PackNRDBHook(HttpClient client, HttpHost host) {
+	public PackRawNRDBHook(HttpClient client, HttpHost host) {
 		super(client, host);
 	}
 	/* </editor-fold> */
@@ -49,7 +49,7 @@ public class PackNRDBHook extends AbstractNRDBHook implements PackWebHook{
 
 	/* Main method used for manual testing. */
 //	public static void main(String[] args){
-//		PackNRDBHook h = new PackNRDBHook();
+//		PackRawNRDBHook h = new PackRawNRDBHook();
 //		PackRaw p = h.pack("core");
 //		List<PackRaw> ps = h.packs();
 //	}

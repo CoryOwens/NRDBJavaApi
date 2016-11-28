@@ -1,4 +1,4 @@
-package com.coryrowens.nrdbjavaapi.webhooks.NRDB.JSON;
+package com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB.JSON;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;

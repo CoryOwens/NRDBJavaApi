@@ -1,10 +1,10 @@
-package com.coryrowens.nrdbjavaapi.webhooks;
+package com.coryrowens.nrdbjavaapi.webhooks.raw;
 
 import java.util.Date;
 import com.coryrowens.nrdbjavaapi.schema.raw.DecklistRaw;
 import java.util.List;
 
-public interface DecklistWebHook {
+public interface DecklistRawWebHook {
 
 	public DecklistRaw decklist(int id);
 

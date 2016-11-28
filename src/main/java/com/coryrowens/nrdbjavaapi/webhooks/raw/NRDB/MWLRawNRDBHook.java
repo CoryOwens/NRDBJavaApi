@@ -1,29 +1,29 @@
-package com.coryrowens.nrdbjavaapi.webhooks.NRDB;
+package com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB;
 
 import com.coryrowens.nrdbjavaapi.schema.raw.MWLRaw;
-import com.coryrowens.nrdbjavaapi.webhooks.MWLWebHook;
-import com.coryrowens.nrdbjavaapi.webhooks.NRDB.JSON.EasyNRDBJsonParser;
+import com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB.JSON.EasyNRDBJsonParser;
 import java.util.List;
 import org.apache.http.HttpHost;
 import org.apache.http.client.HttpClient;
 import org.apache.sling.commons.json.JSONArray;
+import com.coryrowens.nrdbjavaapi.webhooks.raw.MWLRawWebHook;
 
-public class MWLNRDBHook extends AbstractNRDBHook implements MWLWebHook{
+public class MWLRawNRDBHook extends AbstractRawNRDBHook implements MWLRawWebHook{
 
 	/* <editor-fold desc="Constructors"> */
-	public MWLNRDBHook() {
+	public MWLRawNRDBHook() {
 		super();
 	}
 	
-	public MWLNRDBHook(String target){
+	public MWLRawNRDBHook(String target){
 		super(target);
 	}
 	
-	public MWLNRDBHook(HttpClient client, String target) {
+	public MWLRawNRDBHook(HttpClient client, String target) {
 		super(client, target);
 	}
 	
-	public MWLNRDBHook(HttpClient client, HttpHost host) {
+	public MWLRawNRDBHook(HttpClient client, HttpHost host) {
 		super(client, host);
 	}
 	/* </editor-fold> */
@@ -39,7 +39,7 @@ public class MWLNRDBHook extends AbstractNRDBHook implements MWLWebHook{
 
 	/* Main method used for manual testing. */
 //	public static void main(String[] args){
-//		MWLNRDBHook h = new MWLNRDBHook();
+//		MWLRawNRDBHook h = new MWLRawNRDBHook();
 //		List<MWLRaw> m = h.mwl();
 //	}
 }

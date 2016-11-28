@@ -1,9 +1,9 @@
-package com.coryrowens.nrdbjavaapi.webhooks;
+package com.coryrowens.nrdbjavaapi.webhooks.raw;
 
 import com.coryrowens.nrdbjavaapi.schema.raw.SideRaw;
 import java.util.List;
 
-public interface SideWebHook {
+public interface SideRawWebHook {
 
 	public SideRaw side(String sideCode);
 

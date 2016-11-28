@@ -1,29 +1,29 @@
-package com.coryrowens.nrdbjavaapi.webhooks.NRDB;
+package com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB;
 import com.coryrowens.nrdbjavaapi.schema.raw.FactionRaw;
-import com.coryrowens.nrdbjavaapi.webhooks.FactionWebHook;
-import com.coryrowens.nrdbjavaapi.webhooks.NRDB.JSON.EasyNRDBJsonParser;
+import com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB.JSON.EasyNRDBJsonParser;
 import java.util.List;
 import org.apache.http.HttpHost;
 import org.apache.http.client.HttpClient;
 import org.apache.sling.commons.json.JSONArray;
 import org.apache.sling.commons.json.JSONObject;
+import com.coryrowens.nrdbjavaapi.webhooks.raw.FactionRawWebHook;
 
-public class FactionNRDBHook extends AbstractNRDBHook implements FactionWebHook{
+public class FactionRawNRDBHook extends AbstractRawNRDBHook implements FactionRawWebHook{
 
 	/* <editor-fold desc="Constructors"> */
-	public FactionNRDBHook() {
+	public FactionRawNRDBHook() {
 		super();
 	}
 	
-	public FactionNRDBHook(String target){
+	public FactionRawNRDBHook(String target){
 		super(target);
 	}
 	
-	public FactionNRDBHook(HttpClient client, String target) {
+	public FactionRawNRDBHook(HttpClient client, String target) {
 		super(client, target);
 	}
 	
-	public FactionNRDBHook(HttpClient client, HttpHost host) {
+	public FactionRawNRDBHook(HttpClient client, HttpHost host) {
 		super(client, host);
 	}
 	/* </editor-fold> */
@@ -49,7 +49,7 @@ public class FactionNRDBHook extends AbstractNRDBHook implements FactionWebHook{
 
 	/* Main method used for manual testing */
 //	public static void main(String[] args){
-//		FactionNRDBHook h = new FactionNRDBHook();
+//		FactionRawNRDBHook h = new FactionRawNRDBHook();
 //		FactionRaw f = h.faction("anarch");
 //		List<FactionRaw> fs = h.factions();
 //	}

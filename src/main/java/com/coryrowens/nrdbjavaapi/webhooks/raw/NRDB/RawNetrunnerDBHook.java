@@ -1,4 +1,4 @@
-package com.coryrowens.nrdbjavaapi.webhooks.NRDB;
+package com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB;
 
 import com.coryrowens.nrdbjavaapi.schema.raw.CardRaw;
 import com.coryrowens.nrdbjavaapi.schema.raw.CycleRaw;
@@ -8,85 +8,85 @@ import com.coryrowens.nrdbjavaapi.schema.raw.MWLRaw;
 import com.coryrowens.nrdbjavaapi.schema.raw.PackRaw;
 import com.coryrowens.nrdbjavaapi.schema.raw.SideRaw;
 import com.coryrowens.nrdbjavaapi.schema.raw.TypeRaw;
-import com.coryrowens.nrdbjavaapi.webhooks.NetrunnerWebHook;
+import com.coryrowens.nrdbjavaapi.webhooks.raw.NetrunnerWebHook;
 import java.util.Date;
 import java.util.List;
 import org.apache.http.HttpHost;
 import org.apache.http.client.HttpClient;
 
-public class NetrunnerDBHook implements NetrunnerWebHook{
+public class RawNetrunnerDBHook implements NetrunnerWebHook{
 
-	private final CardNRDBHook cards;
-	private final CycleNRDBHook cycles;
-	private final DecklistNRDBHook decklists;
-	private final FactionNRDBHook factions;
-	private final MWLNRDBHook mwl;
-	private final PackNRDBHook packs;
-	private final SideNRDBHook sides;
-	private final TypeNRDBHook types;
+	private final CardRawNRDBHook cards;
+	private final CycleRawNRDBHook cycles;
+	private final DecklistRawNRDBHook decklists;
+	private final FactionRawNRDBHook factions;
+	private final MWLRawNRDBHook mwl;
+	private final PackRawNRDBHook packs;
+	private final SideRawNRDBHook sides;
+	private final TypeRawNRDBHook types;
 	
 	/* <editor-fold desc="Constructors"> */
-	public NetrunnerDBHook(){
+	public RawNetrunnerDBHook(){
 		this(
-				new CardNRDBHook()
-				, new CycleNRDBHook()
-				, new DecklistNRDBHook()
-				, new FactionNRDBHook()
-				, new MWLNRDBHook()
-				, new PackNRDBHook()
-				, new SideNRDBHook()
-				, new TypeNRDBHook()
+				new CardRawNRDBHook()
+				, new CycleRawNRDBHook()
+				, new DecklistRawNRDBHook()
+				, new FactionRawNRDBHook()
+				, new MWLRawNRDBHook()
+				, new PackRawNRDBHook()
+				, new SideRawNRDBHook()
+				, new TypeRawNRDBHook()
 		);
 	}
 	
-	public NetrunnerDBHook(String target){
+	public RawNetrunnerDBHook(String target){
 		this(
-				new CardNRDBHook(target)
-				, new CycleNRDBHook(target)
-				, new DecklistNRDBHook(target)
-				, new FactionNRDBHook(target)
-				, new MWLNRDBHook(target)
-				, new PackNRDBHook(target)
-				, new SideNRDBHook(target)
-				, new TypeNRDBHook(target)
+				new CardRawNRDBHook(target)
+				, new CycleRawNRDBHook(target)
+				, new DecklistRawNRDBHook(target)
+				, new FactionRawNRDBHook(target)
+				, new MWLRawNRDBHook(target)
+				, new PackRawNRDBHook(target)
+				, new SideRawNRDBHook(target)
+				, new TypeRawNRDBHook(target)
 		);
 	}
 	
-	public NetrunnerDBHook(HttpClient client, String target) {
+	public RawNetrunnerDBHook(HttpClient client, String target) {
 		this(
-				new CardNRDBHook(client, target)
-				, new CycleNRDBHook(client, target)
-				, new DecklistNRDBHook(client, target)
-				, new FactionNRDBHook(client, target)
-				, new MWLNRDBHook(client, target)
-				, new PackNRDBHook(client, target)
-				, new SideNRDBHook(client, target)
-				, new TypeNRDBHook(client, target)
+				new CardRawNRDBHook(client, target)
+				, new CycleRawNRDBHook(client, target)
+				, new DecklistRawNRDBHook(client, target)
+				, new FactionRawNRDBHook(client, target)
+				, new MWLRawNRDBHook(client, target)
+				, new PackRawNRDBHook(client, target)
+				, new SideRawNRDBHook(client, target)
+				, new TypeRawNRDBHook(client, target)
 		);
 	}
 	
-	public NetrunnerDBHook(HttpClient client, HttpHost host) {
+	public RawNetrunnerDBHook(HttpClient client, HttpHost host) {
 		this(
-				new CardNRDBHook(client, host)
-				, new CycleNRDBHook(client, host)
-				, new DecklistNRDBHook(client, host)
-				, new FactionNRDBHook(client, host)
-				, new MWLNRDBHook(client, host)
-				, new PackNRDBHook(client, host)
-				, new SideNRDBHook(client, host)
-				, new TypeNRDBHook(client, host)
+				new CardRawNRDBHook(client, host)
+				, new CycleRawNRDBHook(client, host)
+				, new DecklistRawNRDBHook(client, host)
+				, new FactionRawNRDBHook(client, host)
+				, new MWLRawNRDBHook(client, host)
+				, new PackRawNRDBHook(client, host)
+				, new SideRawNRDBHook(client, host)
+				, new TypeRawNRDBHook(client, host)
 		);
 	}
 	
-	public NetrunnerDBHook(
-			CardNRDBHook cards
-			, CycleNRDBHook cycles
-			, DecklistNRDBHook decklists
-			, FactionNRDBHook factions
-			, MWLNRDBHook mwl
-			, PackNRDBHook packs
-			, SideNRDBHook sides
-			, TypeNRDBHook types
+	public RawNetrunnerDBHook(
+			CardRawNRDBHook cards
+			, CycleRawNRDBHook cycles
+			, DecklistRawNRDBHook decklists
+			, FactionRawNRDBHook factions
+			, MWLRawNRDBHook mwl
+			, PackRawNRDBHook packs
+			, SideRawNRDBHook sides
+			, TypeRawNRDBHook types
 	){
 		this.cards = cards;
 		this.cycles = cycles;

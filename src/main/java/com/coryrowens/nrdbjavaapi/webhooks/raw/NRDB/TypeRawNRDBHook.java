@@ -1,29 +1,29 @@
-package com.coryrowens.nrdbjavaapi.webhooks.NRDB;
+package com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB;
 
 import com.coryrowens.nrdbjavaapi.schema.raw.TypeRaw;
-import com.coryrowens.nrdbjavaapi.webhooks.NRDB.JSON.EasyNRDBJsonParser;
-import com.coryrowens.nrdbjavaapi.webhooks.TypeWebHook;
+import com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB.JSON.EasyNRDBJsonParser;
 import java.util.List;
 import org.apache.http.HttpHost;
 import org.apache.http.client.HttpClient;
 import org.apache.sling.commons.json.JSONArray;
+import com.coryrowens.nrdbjavaapi.webhooks.raw.TypeRawWebHook;
 
-public class TypeNRDBHook extends AbstractNRDBHook implements TypeWebHook {
+public class TypeRawNRDBHook extends AbstractRawNRDBHook implements TypeRawWebHook {
 
 	/* <editor-fold desc="Constructors"> */
-	public TypeNRDBHook() {
+	public TypeRawNRDBHook() {
 		super();
 	}
 	
-	public TypeNRDBHook(String target){
+	public TypeRawNRDBHook(String target){
 		super(target);
 	}
 	
-	public TypeNRDBHook(HttpClient client, String target) {
+	public TypeRawNRDBHook(HttpClient client, String target) {
 		super(client, target);
 	}
 	
-	public TypeNRDBHook(HttpClient client, HttpHost host) {
+	public TypeRawNRDBHook(HttpClient client, HttpHost host) {
 		super(client, host);
 	}
 	/* </editor-fold> */
@@ -48,7 +48,7 @@ public class TypeNRDBHook extends AbstractNRDBHook implements TypeWebHook {
 
 	
 	public static void main(String[] args){
-		TypeNRDBHook h = new TypeNRDBHook();
+		TypeRawNRDBHook h = new TypeRawNRDBHook();
 		TypeRaw t = h.type("agenda");
 		List<TypeRaw> ts = h.types();
 	}

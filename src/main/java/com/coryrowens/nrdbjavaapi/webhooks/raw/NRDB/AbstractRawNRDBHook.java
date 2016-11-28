@@ -1,6 +1,6 @@
-package com.coryrowens.nrdbjavaapi.webhooks.NRDB;
+package com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB;
 
-import com.coryrowens.nrdbjavaapi.webhooks.NRDB.JSON.UncheckedJSONException;
+import com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB.JSON.UncheckedJSONException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
@@ -19,25 +19,25 @@ import org.apache.sling.commons.json.JSONArray;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
 
-public class AbstractNRDBHook {
+public class AbstractRawNRDBHook {
 
 	protected final HttpClient client;
 	protected final HttpHost host;
 	
 	/* <editor-fold desc="Constructors"> */
-	public AbstractNRDBHook() {
+	public AbstractRawNRDBHook() {
 		this("netrunnerdb.com");
 	}
 
-	public AbstractNRDBHook(String target) {
+	public AbstractRawNRDBHook(String target) {
 		this(HttpClientBuilder.create().build(), target);
 	}
 
-	public AbstractNRDBHook(HttpClient client, String target) {
+	public AbstractRawNRDBHook(HttpClient client, String target) {
 		this(client, new HttpHost(target));
 	}
 	
-	public AbstractNRDBHook(HttpClient client, HttpHost host) {
+	public AbstractRawNRDBHook(HttpClient client, HttpHost host) {
 		this.client = client;
 		this.host = host;
 	}
@@ -53,10 +53,10 @@ public class AbstractNRDBHook {
 			JSONArray data = (JSONArray) json.get("data");
 			return data;
 		} catch (IOException ex) {
-			Logger.getLogger(CardNRDBHook.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(CardRawNRDBHook.class.getName()).log(Level.SEVERE, null, ex);
 			throw new UncheckedIOException("Failed to get a response from server.", ex);
 		} catch (JSONException | ClassCastException ex) {
-			Logger.getLogger(CardNRDBHook.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(CardRawNRDBHook.class.getName()).log(Level.SEVERE, null, ex);
 			throw new UncheckedJSONException("Error parsing JSON response.", ex);
 		}
 	}

@@ -1,9 +1,9 @@
-package com.coryrowens.nrdbjavaapi.webhooks;
+package com.coryrowens.nrdbjavaapi.webhooks.raw;
 
 import com.coryrowens.nrdbjavaapi.schema.raw.CardRaw;
 import java.util.List;
 
-public interface CardWebHook {
+public interface CardRawWebHook {
 
 	public CardRaw card(String cardCode);
 

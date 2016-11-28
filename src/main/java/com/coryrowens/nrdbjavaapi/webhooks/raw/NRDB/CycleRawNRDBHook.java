@@ -1,29 +1,29 @@
-package com.coryrowens.nrdbjavaapi.webhooks.NRDB;
+package com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB;
 
 import com.coryrowens.nrdbjavaapi.schema.raw.CycleRaw;
-import com.coryrowens.nrdbjavaapi.webhooks.CycleWebHook;
-import com.coryrowens.nrdbjavaapi.webhooks.NRDB.JSON.EasyNRDBJsonParser;
+import com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB.JSON.EasyNRDBJsonParser;
 import java.util.List;
 import org.apache.http.HttpHost;
 import org.apache.http.client.HttpClient;
 import org.apache.sling.commons.json.JSONArray;
+import com.coryrowens.nrdbjavaapi.webhooks.raw.CycleRawWebHook;
 
-public class CycleNRDBHook extends AbstractNRDBHook implements CycleWebHook{
+public class CycleRawNRDBHook extends AbstractRawNRDBHook implements CycleRawWebHook{
 
 	/* <editor-fold desc="Constructors"> */
-	public CycleNRDBHook() {
+	public CycleRawNRDBHook() {
 		super();
 	}
 	
-	public CycleNRDBHook(String target){
+	public CycleRawNRDBHook(String target){
 		super(target);
 	}
 	
-	public CycleNRDBHook(HttpClient client, String target) {
+	public CycleRawNRDBHook(HttpClient client, String target) {
 		super(client, target);
 	}
 	
-	public CycleNRDBHook(HttpClient client, HttpHost host) {
+	public CycleRawNRDBHook(HttpClient client, HttpHost host) {
 		super(client, host);
 	}
 	/* </editor-fold> */
@@ -49,7 +49,7 @@ public class CycleNRDBHook extends AbstractNRDBHook implements CycleWebHook{
 
 	/* Main method used for manual testing. */
 //	public static void main(String[] args){
-//		CycleNRDBHook h = new CycleNRDBHook();
+//		CycleRawNRDBHook h = new CycleRawNRDBHook();
 //		CycleRaw c = h.cycle("core");
 //		List<CycleRaw> cs = h.cycles();
 //	}

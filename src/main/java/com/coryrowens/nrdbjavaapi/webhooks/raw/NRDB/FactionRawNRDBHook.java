@@ -5,7 +5,6 @@ import java.util.List;
 import org.apache.http.HttpHost;
 import org.apache.http.client.HttpClient;
 import org.apache.sling.commons.json.JSONArray;
-import org.apache.sling.commons.json.JSONObject;
 import com.coryrowens.nrdbjavaapi.webhooks.raw.FactionRawWebHook;
 
 public class FactionRawNRDBHook extends AbstractRawNRDBHook implements FactionRawWebHook{

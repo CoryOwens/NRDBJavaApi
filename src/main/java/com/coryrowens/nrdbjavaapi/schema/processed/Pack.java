@@ -17,7 +17,7 @@ public class Pack {
 
 	public Pack(PackRaw raw, CycleSupplier cycleSupplier) {
 		this.code = raw.code;
-		this.cycle = cycleSupplier.fromCode(raw.cycleCode);
+		this.cycle = cycleSupplier.cycle(raw.cycleCode);
 		this.dateRelease = Dates.fromString(raw.dateRelease);
 		this.name = raw.name;
 		this.position = raw.position;

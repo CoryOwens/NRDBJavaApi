@@ -47,7 +47,7 @@ public class Card {
 		this.flavor = raw.flavor;
 		this.illustrator = raw.illustrator;
 		this.influenceLimit = raw.influenceLimit;
-		this.pack = packSupplier.fromCode(raw.packCode);
+		this.pack = packSupplier.pack(raw.packCode);
 		this.position = raw.position;
 		this.quantity = raw.quantity;
 		this.side = Side.fromCode(raw.sideCode);

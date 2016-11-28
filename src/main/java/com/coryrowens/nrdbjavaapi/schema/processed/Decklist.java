@@ -38,7 +38,7 @@ public class Decklist {
 		this.tournamentBadge = raw.tournamentBadge;
 		Map<Card, Integer> cards = new HashMap<>();
 		for (String cardCode : raw.cards.keySet()) {
-			Card card = cardSupplier.fromCode(cardCode);
+			Card card = cardSupplier.card(cardCode);
 			Integer count = raw.cards.get(cardCode);
 			cards.put(card, count);
 		}

@@ -30,7 +30,7 @@ public class MWL {
 		this.dateStart = Dates.fromString(raw.dateStart);
 		Map<Card, Integer> cards = new HashMap<>();
 		for (String cardCode : raw.cards.keySet()) {
-			Card card = cardSupplier.fromCode(cardCode);
+			Card card = cardSupplier.card(cardCode);
 			Integer flag = raw.cards.get(cardCode);
 			cards.put(card, flag);
 		}

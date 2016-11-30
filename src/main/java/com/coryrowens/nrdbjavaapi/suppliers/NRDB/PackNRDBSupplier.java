@@ -4,16 +4,16 @@ import com.coryrowens.nrdbjavaapi.schema.processed.Pack;
 import com.coryrowens.nrdbjavaapi.schema.raw.PackRaw;
 import com.coryrowens.nrdbjavaapi.suppliers.CycleSupplier;
 import com.coryrowens.nrdbjavaapi.suppliers.PackSupplier;
-import com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB.PackRawNRDBHook;
+import com.coryrowens.nrdbjavaapi.webhooks.raw.PackRawWebHook;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class PackNRDBSupplier implements PackSupplier {
 
-	private final PackRawNRDBHook hook;
+	private final PackRawWebHook hook;
 	private final CycleSupplier supplier;
 	
-	public PackNRDBSupplier(PackRawNRDBHook hook, CycleSupplier supplier){
+	public PackNRDBSupplier(PackRawWebHook hook, CycleSupplier supplier){
 		this.hook = hook;
 		this.supplier = supplier;
 	}

@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface DecklistSupplier {
 
-	public Decklist decklist(int i);
+	public Decklist decklist(int id);
 	
 	public List<Decklist> decklists(Date date);
 }

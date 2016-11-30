@@ -4,15 +4,15 @@ import com.coryrowens.nrdbjavaapi.schema.processed.Card;
 import com.coryrowens.nrdbjavaapi.schema.raw.CardRaw;
 import com.coryrowens.nrdbjavaapi.suppliers.CardSupplier;
 import com.coryrowens.nrdbjavaapi.suppliers.PackSupplier;
-import com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB.CardRawNRDBHook;
+import com.coryrowens.nrdbjavaapi.webhooks.raw.CardRawWebHook;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class CardNRDBSupplier implements CardSupplier{
 
-	private final CardRawNRDBHook hook;
+	private final CardRawWebHook hook;
 	private final PackSupplier supplier;
-	public CardNRDBSupplier(CardRawNRDBHook hook, PackSupplier supplier){
+	public CardNRDBSupplier(CardRawWebHook hook, PackSupplier supplier){
 		this.hook = hook;
 		this.supplier = supplier;
 	}

@@ -3,15 +3,15 @@ package com.coryrowens.nrdbjavaapi.suppliers.NRDB;
 import com.coryrowens.nrdbjavaapi.schema.processed.Cycle;
 import com.coryrowens.nrdbjavaapi.schema.raw.CycleRaw;
 import com.coryrowens.nrdbjavaapi.suppliers.CycleSupplier;
-import com.coryrowens.nrdbjavaapi.webhooks.raw.NRDB.CycleRawNRDBHook;
+import com.coryrowens.nrdbjavaapi.webhooks.raw.CycleRawWebHook;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class CycleNRDBSupplier implements CycleSupplier{
 
-	private final CycleRawNRDBHook hook;
+	private final CycleRawWebHook hook;
 	
-	public CycleNRDBSupplier(CycleRawNRDBHook hook){
+	public CycleNRDBSupplier(CycleRawWebHook hook){
 		this.hook = hook;
 	}
 	
